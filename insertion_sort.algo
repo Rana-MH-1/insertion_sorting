@@ -1,0 +1,24 @@
+FUNCTION insertion_sorting(arr: ARRAY_OF INTEGER;) : ARRAY_OF INTEGER;
+VAR
+    i,j: INTEGER;
+BEGIN
+    FOR i FROM 1 TO arr.length -1 DO
+        key:= arr[i];
+        j:= i-1;
+
+        WHILE (j>= 0 AND arr[j] > key ) DO
+            arr[j+1] := arr[j];
+            j:=j-1;
+        END_WHILE
+    END_FOR
+    RETURN arr ;
+END
+
+ALGORITHM sort
+VAR
+    sorted_array: ARRAY_OF INTEGER
+BEGIN
+    write("Type the array to be sorted");
+    read(arr)
+    sorted_array:= insertion_sorting(arr);
+END
